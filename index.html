@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Auto Refresh</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        iframe { width: 100%; height: 90vh; border: none; }
+    </style>
+</head>
+<body>
+    <iframe id="powerbi-report" src=https://bi.apexpizza.uz/></iframe>
+
+    <script>
+        function refreshReport() {
+            let iframe = document.getElementById("powerbi-report");
+            if (iframe) {
+                iframe.src = iframe.src; // Обновление отчёта
+            }
+        }
+
+        // Обновлять каждые 20 Минут
+        setInterval(refreshReport, 60000);
+    </script>
+</body>
+</html>
